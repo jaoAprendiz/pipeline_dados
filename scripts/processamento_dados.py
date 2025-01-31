@@ -9,11 +9,13 @@ class Dados:
         self.nome_colunas = self.__get_columns()
         self.qtd_linhas = self.__size_data()
 
-    def __leitura_json(self, path):
+    @classmethod
+    def __leitura_json(cls, path):
         with open(path, 'r') as file:
             return json.load(file)
 
-    def __leitura_csv(self, path):
+    @classmethod
+    def __leitura_csv(cls, path):
         dados_csv = []
         with open(path, 'r') as file:
             reader = csv.DictReader(file, delimiter=',')
@@ -23,12 +25,10 @@ class Dados:
 
     @classmethod
     def leitura_dados(cls, path, tipo_dados):
-        obj_temp = cls([])  # Criamos um objeto temporário para acessar os métodos de instância
-
         if tipo_dados == 'csv':
-            dados = obj_temp.__leitura_csv(path)
+            dados = cls.__leitura_csv(path)
         elif tipo_dados == 'json':
-            dados = obj_temp.__leitura_json(path)
+            dados = cls.__leitura_json(path)
         else:
             raise ValueError("Tipo de dados inválido. Use 'csv' ou 'json'.")
 
@@ -50,10 +50,10 @@ class Dados:
     def __size_data(self):
         return len(self.dados)
 
-    def join(self, dadosB):
-        self.dados += dadosB.dados
-        self.nome_colunas = self.__get_columns()
-        self.qtd_linhas = self.__size_data()
+    @classmethod
+    def join(cls, dadosA, dadosB):
+        combined_list = dadosA.dados + dadosB.dados
+        return cls(combined_list)
 
     def __transformando_dados_tabela(self):
         dados_combinados_tabela = [self.nome_colunas]
