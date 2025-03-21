@@ -33,7 +33,7 @@ Para executar o projeto, siga os passos abaixo:
 1.  Clone este repositório:
 
     ```bash
-    git clone [https://github.com/jaoAprendiz/pipeline_dados.git](https://www.google.com/search?q=https://github.com/jaoAprendiz/pipeline_dados.git)
+    git clone https://github.com/jaoAprendiz/pipeline_dados.git
     ```
 
 2.  Navegue até o diretório do projeto:
