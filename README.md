@@ -11,7 +11,6 @@ As duas empresas comercializam diversos produtos, e este pipeline visa unificar 
 ## Tecnologias Utilizadas
 
 * **Python**: Linguagem de programação principal utilizada para a implementação do pipeline.
-* **Pandas**: Biblioteca para manipulação e transformação de dados tabulares.
 * **json**: Biblioteca para leitura e processamento de dados em formato JSON.
 * **csv**: Biblioteca padrão do Python para leitura e escrita de arquivos CSV.
 * **Jupyter Notebook**: Ambiente interativo para exploração e análise de dados.
